@@ -7,16 +7,14 @@
                     class="ipt"
                     v-model="searchContent"
                     @keydown.enter="search()"
-                    placeholder="搜索盗墓笔记重启试试"
                 />
                 <p class="tips">
-                    <span>搜索示例:盗墓笔记重启</span>
+                    <small>搜索示例:JavaNewbies</small>
                 </p>
             </div>
             <div class="canvas">
                 <Keywords v-show="type === 1" @searchData="search" @windowResize="windowResize"></Keywords>
                 <Charts ref="charts" v-show="type === 2" :chartList="searchList" />
-                
             </div>
         </div>
 	</div>
@@ -49,7 +47,7 @@ export default {
          */
 		async search(text) {
 			text || (text = this.searchContent);
-            console.log("sss", text, this.searchContent);
+            // console.log("sss", text, this.searchContent);
             if(!text){
                 this.type = 1
                 return
